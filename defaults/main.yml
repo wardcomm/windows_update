@@ -1,7 +1,6 @@
 ---
-patching+patching_windows_reboot: False
-patching_windows_reboot_timeout:
-# defaults file for wardcomm.windows_updates
+patching_windows_reboot: False
+patching_windows_reboot_timeout: 3600
 patching_windows_categories:
   - "CriticalUpdates"
   - "SecurityUpdates"
