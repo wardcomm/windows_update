@@ -5,4 +5,4 @@ patching_windows_reboot_timeout:
 patching_windows_categories:
   - "CriticalUpdates"
   - "SecurityUpdates"
-  - "updates"
+  - "Updates"
