@@ -1,6 +1,6 @@
 ---
 
-- name: Install Windows updates
+- name: Install Windows Updates
   win_updates:
     category_names: "{{ patching_windows_categories }}"
     reboot: "{{ 'yes' if patching_windows_reboot else 'no' }}"
