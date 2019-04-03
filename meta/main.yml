@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: windoes_update
+  role_name: windows_update
   author: J. Chad Ward
-  description: Windows Updates For Windows Server 2016
+  description: An Ansible Galaxy Role for Windows Updates For Windows Server 2016
   company: jchadward.com
   license: MIT
   min_ansible_version: 2.7
@@ -17,3 +17,21 @@ galaxy_info:
     - 2016
 
   dependencies: []
+
+
+# ---
+# galaxy_info:
+#   description: This is Galaxy role to help getting a linux box in windows AD
+#   author: "J. Chad Ward"
+#   company: jchadward.com
+#   license: BSD
+#   min_ansible_version: 1.4 
+#   platforms:
+#    - name: EL
+#      versions:
+#       - 5
+#       - 6
+#       - 7
+#   categories:
+#    - development
+# dependencies: []
