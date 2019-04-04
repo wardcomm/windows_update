@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+    - {role: wardcomm.windows_update}
