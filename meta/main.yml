@@ -7,11 +7,11 @@ galaxy_info:
   license: MIT
   min_ansible_version: 2.7
   platforms:
-   - name: Windows
+   - name: windows
      versions:
        - 2016
   galaxy_tags:
-    - Windows
-    - Update
+    - windows
+    - update
     - 2016
 dependencies: []
