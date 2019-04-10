@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  description: An Ansible Galaxy Role for Windows Updates For Windows Server 2016
+  description: Windows Updates For Windows Server 2016
   role_name: windows_update
   author: J. Chad Ward
   company: jchadward.com
