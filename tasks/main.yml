@@ -2,7 +2,7 @@
 - name: Install Windows Updates
   win_updates:
     category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ ""yes"" if patching_windows_reboot else ""no"" }}"
+    reboot: "{{ "yes" if patching_windows_reboot else "no" }}"
     reboot_timeout: "{{ patching_windows_reboot_timeout }}"
   register: win_updates_result
   failed_when: >-
@@ -20,5 +20,5 @@
 - name: Install Windows Updates Retry
   win_updates:
     category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ ""yes"" if patching_windows_reboot else ""no"" }}"
+    reboot: "{{ "yes" if patching_windows_reboot else "no" }}"
     reboot_timeout: "{{ patching_windows_reboot_timeout }}"
