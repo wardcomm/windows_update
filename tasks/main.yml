@@ -1,24 +1,24 @@
 ---
-
 - name: Install Windows Updates
   win_updates:
-    category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ 'yes' if patching_windows_reboot else 'no' }}"
-    reboot_timeout: "{{ patching_windows_reboot_timeout }}"
+    category_names: '{{ patching_windows_categories }}'
+    reboot: '{{ ''yes'' if patching_windows_reboot else ''no'' }}'
+    reboot_timeout: '{{ patching_windows_reboot_timeout }}'
   register: win_updates_result
-  failed_when: not patching_windows_reboot and win_updates_result.failed is defined and win_updates_result.failed
-
+  failed_when: >-
+    not patching_windows_reboot and win_updates_result.failed is defined and
+    win_updates_result.failed
 - name: Reboot and Retry
-  when: patching_windows_reboot and win_updates_result.msg is defined and win_updates_result.msg == "A reboot is required before more updates can be installed"
-  block:
-
+  when: >-
+    patching_windows_reboot and win_updates_result.msg is defined and
+    win_updates_result.msg == "A reboot is required before more updates can be
+    installed"
+  block: null
 - name: Reboot Windows to retry update installation
-  win_reboot:
-  reboot_timeout: "{{ patching_windows_reboot_timeout }}"
-
+  win_reboot: null
+  reboot_timeout: '{{ patching_windows_reboot_timeout }}'
 - name: Install Windows Updates Retry
   win_updates:
-    category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ 'yes' if patching_windows_reboot else 'no' }}"
-    reboot_timeout: "{{ patching_windows_reboot_timeout }}"
-# tasks file for wardcomm.windows_updates
+    category_names: '{{ patching_windows_categories }}'
+    reboot: '{{ ''yes'' if patching_windows_reboot else ''no'' }}'
+    reboot_timeout: '{{ patching_windows_reboot_timeout }}'
