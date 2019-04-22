@@ -3,26 +3,14 @@
 - name: Install Windows Updates
   win_updates:
     category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ "yes" if patching_windows_reboot else "no" }}"
-    reboot_timeout: "{{ patching_windows_reboot_timeout }}"
-  register: win_updates_result
-  failed_when: >-
-    not patching_windows_reboot and win_updates_result.failed is defined and
-    win_updates_result.failed
-
-- name: Reboot and Retry
-  when: >-
-    patching_windows_reboot and win_updates_result.msg is defined and
-    win_updates_result.msg == "A reboot is required before more updates can be
-    installed"
-  block: null
-
-- name: Reboot Windows to retry update installation
-  win_reboot: null
-  reboot_timeout: "{{ patching_windows_reboot_timeout }}"
-
-- name: Install Windows Updates Retry
-  win_updates:
-    category_names: "{{ patching_windows_categories }}"
-    reboot: "{{ "yes" if patching_windows_reboot else "no" }}"
-    reboot_timeout: "{{ patching_windows_reboot_timeout }}"
+    state: installed
+    reboot: "{{ patching_windows_reboot }}"
+    reboot_timeout: 600
+  when: "{{ patching_windows_update_allowed }}"
+  register: win_update_result
+  changed_when:
+    - win_update_result.installed_update_count is defined
+    - win_update_result.installed_update_count > 0
+  failed_when:
+    - win_update_result.failed_update_count is defined
+    - win_update_result.failed_update_count > 0
