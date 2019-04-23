@@ -1,11 +1,11 @@
 ---
 galaxy_info:
-  description: Windows Updates For Windows Server 2016
-  role_name: windows_update
   author: J. Chad Ward
+  description: Windows Updates For Windows Server 2016
   company: jchadward.com
   license: MIT
   min_ansible_version: 2.7
+  role_name: windows_update
   platforms:
   - name: windows
     versions:
