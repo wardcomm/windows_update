@@ -1,5 +1,4 @@
 ---
-- hosts: all
-  remote_user: root
-  roles:
-    - wardcomm.windows_updates
+- hosts: localhost
+  tasks:
+  - debug: msg="Ansible is working!"

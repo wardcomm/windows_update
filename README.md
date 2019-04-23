@@ -5,17 +5,23 @@ https://github.com/wardcomm/windows_update
 
 Role Name
 =========
- An Ansible Galaxy Role for windows updates
+ An Ansible Galaxy Role:
+ -- windows updates
 
 Role Variables
 --------------
 
-patching_windows_reboot: False
+patching_windows_reboot_allowed: true
+patching_windows_update_allowed: true
 patching_windows_reboot_timeout: 3600
 patching_windows_categories:
-  - "CriticalUpdates"
-  - "SecurityUpdates"
-  - "Updates"
+  - CriticalUpdates
+  - SecurityUpdates
+  - DefinitionUpdates
+  - UpdateRollups
+  - Updates
+  - ServicePacks
+  - FeaturePacks
 
 Dependencies
 ------------
