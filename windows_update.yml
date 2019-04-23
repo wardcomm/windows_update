@@ -1,4 +1,4 @@
 ---
 - hosts: [all]
   roles:
-  - [wardcomm/windows_update]
+   - [wardcomm/windows_update]
