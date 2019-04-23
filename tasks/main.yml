@@ -5,7 +5,7 @@
     category_names: "{{ patching_windows_categories }}"
     state: installed
     reboot: "{{ patching_windows_reboot_allowed }}"
-    reboot_timeout: 600
+    reboot_timeout: "{{ patching_windows_reboot_timeout }}"
   when: "{{ patching_windows_update_allowed }}"
   register: win_update_result
   changed_when:

@@ -10,8 +10,10 @@ galaxy_info:
     - name: windows
       versions:
         - 2016
+        -2019
   galaxy_tags:
     - windows
     - update
     - 2016
+    - 2019
 dependencies: []
