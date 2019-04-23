@@ -7,10 +7,10 @@
     reboot: "{{ patching_windows_reboot_allowed }}"
     reboot_timeout: "{{ patching_windows_reboot_timeout }}"
   when: "{{ patching_windows_update_allowed }}"
-  register: win_update_result
+  register: windows_update_result
   changed_when:
-    - win_update_result.installed_update_count is defined
-    - win_update_result.installed_update_count > 0
+    - windows_update_result.installed_update_count is defined
+    - windows_update_result.installed_update_count > 0
   failed_when:
-    - win_update_result.failed_update_count is defined
-    - win_update_result.failed_update_count > 0
+    - windows_update_result.failed_update_count is defined
+    - windows_update_result.failed_update_count > 0
