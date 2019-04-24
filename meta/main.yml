@@ -1,16 +1,16 @@
 ---
 galaxy_info:
-  author: J. Chad Ward
+  author: wardcomm
   description: Windows Updates For Windows Server 2016
   company: jchadward.com
   license: MIT
-  min_ansible_version: 2.7
+  min_ansible_version: 2.1
   role_name: windows_update
   platforms:
-    - name: windows
-      versions:
-        - 2016
-        - 2019
+  - name: windows
+    versions:
+      - 2016
+      - 2019
   galaxy_tags:
     - windows
     - update
