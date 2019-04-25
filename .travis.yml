@@ -31,7 +31,7 @@ addons:
   apt:
     packages:
     - python-pip
-# install:
+install:
 # Install ansible
   - pip install ansible
 # Install ansible reveiw
