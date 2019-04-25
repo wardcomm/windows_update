@@ -5,4 +5,5 @@
     - name: run ipconfig
       raw: ipconfig
       register: ipconfig
-- debug: var=ipconfig
+- debug:
+    var: ipconfig
