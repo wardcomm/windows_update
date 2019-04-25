@@ -6,7 +6,7 @@
     state: installed
     reboot: "{{ patching_windows_reboot_allowed }}"
     reboot_timeout: "{{ patching_windows_reboot_timeout }}"
-  when: "{{ patching_windows_update_allowed }}"
+  when:  patching_windows_update_allowed
   register: windows_update_result
   changed_when:
     - windows_update_result.installed_update_count is defined
