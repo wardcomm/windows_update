@@ -1,4 +1,8 @@
 ---
-- hosts: localhost
+- name: Test Raw Ansible Module on windows box
+  hosts: all
   tasks:
-  - debug: msg = "Ansible is working!"
+    - name: run ipconfig
+      raw: ipconfig
+      register: ipconfig
+- debug: var=ipconfig
