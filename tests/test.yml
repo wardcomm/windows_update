@@ -1,9 +1,7 @@
----
-- name: Test Raw Ansible Module on windows box
-  hosts: all
-  tasks:
-    - name: run ipconfig
-      raw: ipconfig
-      register: ipconfig
-- debug:
-    var: ipconfig
+- name: Check Ansible version
+  command: ansible --version
+  register: ansibleVersion
+
+- name: Print version
+  debug:
+    msg: "Ansible Version: {{ ansibleVersion.stdout }}"
