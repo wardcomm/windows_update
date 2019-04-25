@@ -36,7 +36,7 @@ install:
   - pip install ansible-lint
 
 # Install yamllint
-- pip install yamllint
+  - pip install yamllint
 
   # # Create ansible.cfg with correct roles_path
   # - printf '[defaults]\nroles_path=../' >ansible.cfg
@@ -49,7 +49,7 @@ script:
   - ansible-review --version
 
   # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  - ansible-playbook -i tests/inventory tests/test.yml  --syntax-check
 
   - git ls-files | grep -Ei '^[^[:punct:]].+.(yaml|yml)$' | xargs ansible-review -q
 
