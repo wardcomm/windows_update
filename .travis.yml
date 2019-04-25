@@ -29,7 +29,7 @@ addons:
 # install:
 # Install ansible
   - pip install ansible
-#Install ansible reveiw
+# Install ansible reveiw
   - pip install ansible-review
 
 # Install ansible-lint
